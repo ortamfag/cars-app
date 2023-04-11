@@ -1,0 +1,270 @@
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.btn {
+    padding: 20px 53px;
+    background: #030305;
+    display: flex;
+    justify-content: center;
+
+    color: #FFFFFF;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 150%;
+    border: 0;
+    cursor: pointer;
+    transition: background 0.4s;
+}
+
+.btn:hover:not(:disabled) {
+    transition: background 0.4s;
+    background: #575757;
+}
+
+.btn:disabled {
+    cursor: not-allowed;
+    color: gray;
+    background-color: #343434;
+}
+
+.sub-title{
+    font-weight: 700;
+    font-size: 60px;
+    line-height: 70px;
+    color: #030305; 
+}
+
+/* header */
+.header {
+    padding: 25px;
+    border-bottom: 1px solid #E5E5E5;
+}
+
+.header .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header__logo img {
+    vertical-align: bottom;
+}
+
+.nav ul {
+    display: flex;
+    justify-content: space-between;
+    list-style-type: none;
+}
+
+.nav__item {
+    margin-right: 115px;
+}
+
+.nav__item a {
+    color: #030305;
+    font-size: 15px;
+    line-height: 18px;
+    text-decoration: none;
+    border-bottom: 0;
+}
+
+.nav__item a:hover {
+    border-bottom: 2px solid #000000;
+}
+
+/* header */
+
+
+/* intro */
+
+.intro {
+    background: url("../assets/img/background.png") no-repeat center;
+    background-size: contain;
+    padding: 104px 0 154px;
+    height: 705px;
+    max-height: 705px;
+}
+
+.intro__title {
+    max-width: 855px;
+    font-weight: 700;
+    font-size: 80px;
+    line-height: 110%;
+    color: #030305;
+}
+
+.intro__subtitle {
+    max-width: 502px;
+    margin: 40px 0;
+    font-size: 16px;
+    line-height: 130%;
+    color: #030305;
+}
+
+/* intro */
+
+
+/* cards */
+
+.cards {
+    padding-bottom: 100px;
+}
+
+.cards__title {
+    margin-bottom: 40px;
+}
+
+.cards__items {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-column-gap: 24px;
+    grid-row-gap: 40px;
+}
+
+.cards__item {
+    max-width: 384px;
+}
+
+.cards__item .btn {
+    width: 100%;
+    margin-top: 15px;
+}
+
+.cards__item-car {
+    margin-bottom: 15px;
+    transition: all 0.3s;
+    cursor: pointer;
+}
+
+.cards__item-car:hover {
+    transform: scale(1.1);
+}
+
+.cards__item-title { 
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 150%;
+    text-align: center;
+    letter-spacing: 0.02em;
+    color: #030305;
+
+    margin-bottom: 17px;
+}
+
+.cards__item-props {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 330px;
+    margin: 0 auto;
+}
+
+.cards__item-prop {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.cards__item-prop img {
+    margin-bottom: 11px;
+}
+
+.cards__item-prop p {
+    font-size: 16px;
+    line-height: 130%;
+
+    text-align: center;
+    letter-spacing: 0.02em;
+
+    color: #030305;
+}
+
+.cards__item-prop p:nth-child(2) {
+    font-weight: 700;
+}
+
+.cards__items-prop p:nth-child(3) {
+    font-weight: 400;
+}
+
+/* cards */
+
+/* price */
+
+.price {
+    border-bottom: 1px solid #E5E5E5;
+    overflow-x: hidden;
+}
+
+.price__title {
+    margin-bottom: 20px;
+}
+
+.price__text {
+    font-size: 16px;
+    line-height: 130%;
+    color: #5D5D5F;
+}
+
+.price__inner {
+    display: flex;
+    align-items: center;
+}
+
+.price__form {
+    min-width: 350px;
+    display: flex;
+    flex-direction: column;
+}
+
+.price__form input {
+    padding: 22px 18px;
+    font-size: 16px;
+    line-height: 130%;
+    color: #5D5D5F;
+    border: 1px solid #5D5D5F;
+    background: #FFFFFF;
+    margin-bottom: 15px;
+    outline: none;
+}
+
+.price__form img {
+    overflow-x: hidden;
+}
+
+/* price */
+
+/* footer */
+
+.footer {
+    padding: 25px 0;
+}
+
+.footer__wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer__wrapper p {
+    font-size: 15px;
+    line-height: 18px;
+    color: #030305;
+}
+
+/* footer */
+
+.price__input.ng-touched.ng-valid {
+    border: 1px solid #5d5d5f;
+}
+
+.price__input.ng-touched.ng-invalid {
+    border: 1px solid red;
+}
+
+

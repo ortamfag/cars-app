@@ -1,0 +1,113 @@
+<header class="header">
+    <div class="container">
+        <div class="header__logo">
+            <img src="../assets/img/logo.png" alt="logo">
+        </div>
+
+        <nav class="nav">
+            <ul>
+                <li class="nav__item">
+                    <a href="#">Главная</a>
+                </li>
+
+                <li class="nav__item">
+                    <a href="#">Автомобили</a>
+                </li>
+
+                <li class="nav__item">
+                    <a href="#">Бронирование авто</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<main class="main">
+    <section class="intro" [ngStyle]="bgPos">
+        <div class="container">
+            <div class="intro__info">
+                <h1 class="intro__title js-intro__title">Аренда премиальных автомобилей</h1>
+
+                <p class="intro__subtitle">
+                    В нашем клубе имеется солидная коллекция спортивных автомобилей — от
+                    достаточно распространенных серийных машин до настоящего гоночного эксклюзива. Воспользуйтесь
+                    уникальной возможностью побывать за рулем настоящей легенды и узнать, на что она способна за
+                    пределами гоночной трассы!
+                </p>
+
+                <button id="main-action" class="intro__action btn" (click)="goScroll(cars)">Посмотреть автомобили</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="cars" class="cards" #cars>
+        <div class="container">
+            <h2 class="cards__title sub-title">Наш автопарк</h2>
+
+            <div class="cards__items">
+                <div class="cards__item" *ngFor="let car of carsData">
+                    <img class="cards__item-car" src="../assets/img/{{car.image}}" alt="{{car.name}}">
+
+                    <p class="cards__item-title">{{car.name}}</p>
+
+                    <div class="cards__item-props">
+                        <div class="cards__item-prop">
+                            <img src="../assets/img/gear.svg" alt="Gear">
+
+                            <p>Привод</p>
+                            <p>{{car.gear}}</p>
+                        </div>
+
+                        <div class="cards__item-prop">
+                            <img src="../assets/img/engine.svg" alt="Engine">
+
+                            <p>Двигатель</p>
+                            <p>{{car.engine}} л.с.</p>
+                        </div>
+
+                        <div class="cards__item-prop">
+                            <img src="../assets/img/belt.svg" alt="Belt">
+
+                            <p>Кол-во мест</p>
+                            <p>{{car.places}}</p>
+                        </div>
+                    </div>
+
+                    <button class="btn js-car-btn" (click)="goScroll(price, car)">Забронировать</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="price" class="price" #price>
+        <div class="container">
+            <h2 class="price__title sub-title">Узнать цену и забронировать</h2>
+
+            <p class="price__text">
+                Заполните данные, и мы перезвоним вам для уточнения всех деталей бронирования
+            </p>
+
+            <div class="price__inner">
+                <form class="price__form" [formGroup]="priceForm">
+                    <input type="text" class="price__input" placeholder="Ваше имя" formControlName="name" id="name">
+                    <input type="tel" class="price__input" placeholder="Ваш телефон" formControlName="tel" id="tel">
+                    <input type="text" class="price__input" placeholder="Автомобиль, который вас интересует" formControlName="car" id="car">
+
+                    <button id="price-action" class="btn" type="button" (click)="onSubmit()" [disabled]="!priceForm.valid">Узнать цену</button>
+                </form>
+
+                <img class="js-price-image" src="../assets/img/footer.png" [ngStyle]="trans" alt="Form">
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="footer">
+    <div class="container">
+        <div class="footer__wrapper">
+            <img src="../assets/img/logo.png" alt="logo">
+
+            <p class="price__text">Все права защищены</p>
+        </div>
+    </div>
+</footer>
