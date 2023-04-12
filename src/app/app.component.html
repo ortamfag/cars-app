@@ -46,7 +46,7 @@
 
             <div class="cards__items">
                 <div class="cards__item" *ngFor="let car of carsData">
-                    <img class="cards__item-car" src="../assets/img/{{car.image}}" alt="{{car.name}}">
+                    <img class="cards__item-car" src="{{car.image}}" alt="{{car.name}}">
 
                     <p class="cards__item-title">{{car.name}}</p>
 
@@ -90,7 +90,7 @@
             <div class="price__inner">
                 <form class="price__form" [formGroup]="priceForm">
                     <input type="text" class="price__input" placeholder="Ваше имя" formControlName="name" id="name">
-                    <input type="tel" class="price__input" placeholder="Ваш телефон" formControlName="tel" id="tel">
+                    <input type="tel" class="price__input" placeholder="Ваш телефон" formControlName="phone" id="phone">
                     <input type="text" class="price__input" placeholder="Автомобиль, который вас интересует" formControlName="car" id="car">
 
                     <button id="price-action" class="btn" type="button" (click)="onSubmit()" [disabled]="!priceForm.valid">Узнать цену</button>
