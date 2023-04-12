@@ -44,6 +44,11 @@
         <div class="container">
             <h2 class="cards__title sub-title">Наш автопарк</h2>
 
+            <div class="car-toggle">
+                <div [ngClass]="{active: category === 'sport'}" (click)="toggleCategory('sport')">Sport</div>
+                <div [ngClass]="{active: category === 'luxury'}" (click)="toggleCategory('luxury')">Luxury</div>
+            </div>
+
             <div class="cards__items">
                 <div class="cards__item" *ngFor="let car of carsData">
                     <img class="cards__item-car" src="{{car.image}}" alt="{{car.name}}">

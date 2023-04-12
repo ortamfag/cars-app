@@ -20,10 +20,15 @@ export class AppComponent {
     constructor(private fb: FormBuilder, private appService: AppService) {
     }
 
-    ngOnInit() {
-        this.appService.getData().subscribe(carsData => this.carsData = carsData)
+    category: string = 'sport';
+    toggleCategory(category: string) {
+        this.category = category;
+        this.ngOnInit();
     }
 
+    ngOnInit() {
+        this.appService.getData(this.category).subscribe(carsData => this.carsData = carsData);
+    }
 
     goScroll(target: HTMLElement, car?: any) {
         target.scrollIntoView({behavior: "smooth"});
